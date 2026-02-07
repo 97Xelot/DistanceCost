@@ -1,0 +1,27 @@
+* {
+    align-content: center;
+    margin: auto;
+    padding: 3px; 
+    flex: auto;
+    background-color: rgb(173, 206, 111);
+}
+
+body {
+    text-align: center;
+}
+.container {
+    background-color: white;
+    text-align: left;
+}
+.container button {
+    width: 30%;
+    column-width: auto;
+}
+.header {
+    text-align: center;
+}
+
+button {
+    outline: auto;
+    
+}
