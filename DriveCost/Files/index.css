@@ -19,6 +19,7 @@ body{
     height: 500px;
     justify-content: center;
     align-items: center;
+    
 }
 
 .inner-container{
@@ -81,7 +82,7 @@ button{
     border-Color: rgb(255, 255, 255);
     color: #ffff;
     border-Width: 1px;
-    background-Color: #8cb7e6;
+    background-Color: #324b66;
     position: relative;
 
 }

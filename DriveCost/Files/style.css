@@ -12,6 +12,7 @@ body {
 .container {
     background-color: white;
     text-align: left;
+    justify-content: center;
 }
 .container button {
     width: 30%;
