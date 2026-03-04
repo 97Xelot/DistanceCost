@@ -14,6 +14,11 @@ body {
 }
 .container {
     text-align: left;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
 }
 .header {
     text-align: center;
@@ -48,3 +53,35 @@ hr {
     width: 60%;
     
 }
+/* =======Navigation=========*/
+.nav-btns{
+   display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.nav-btns a{
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+
+/*========Icons=======*/
+.btn-icons{
+    display:flexbox;
+    width: auto;
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
