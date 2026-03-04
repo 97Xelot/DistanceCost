@@ -1,24 +1,50 @@
+/* ======All Pages=======*/
 * {
     align-content: center;
     margin: auto;
     padding: 3px; 
     flex: auto;
-    background-color: rgb(173, 206, 111);
+    background-color: rgb(218, 218, 218);
 }
 
+/* =======Body=========*/
 body {
     text-align: center;
+    background-color: antiquewhite;
 }
 .container {
-    background-color: white;
     text-align: left;
-    justify-content: center;
+}
+.header {
+    text-align: center;
+    background-color: inherit;
+    border: ridge;
+}
+
+/*========Buttons========*/
+button {
+    outline: auto;
+    color: green;
 }
 .container button {
     width: 30%;
     column-width: auto;
-}
-.header {
-    text-align: center;
+    color: black;
 }
 
+/* =========Links============ */
+a {
+    color: #0000FF;
+}
+
+/*============Horizontal Line===*/
+hr {
+    color: silver;
+    background-color: black;
+}
+
+/*=========Headline========*/
+.headline {
+    width: 60%;
+    
+}
