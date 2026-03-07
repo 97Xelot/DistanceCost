@@ -7,30 +7,34 @@
     </head>
     <body>
         <h1 class = "header">DriCo</h1>
+        <div class= "nav-dropdown">
+            <div class= "hamburger-icon">
+                <div class= "bar"></div>
+                <div class= "bar"></div>
+                <div class= "bar"></div>
+            </div>
+            <ul class="dropdown-content">
+                <li><a id ="profile" href="">Profile</a></li>
+                <li><a id ="settings" href="">Settings</a></li>
+                <li><a id ="calculate"  href="">Calulate</a></li>
+                <li><a id ="map" href="">Map</a></li>
+                <li><a id ="community" href="#">Community</a></li>
+                <li><a id ="about" href="">About</a></li>
+            </ul>
+        </div>
         <hr />
         <div class= "Navigation">
             <div class= "nav-links">
-                <a id ="calculate"  href="">Calulate</a>
-                <a id ="map" href="">Map</a>
-                <a id ="community" href="#">Community</a>
-                <a id ="about" href="">About</a>
+               
             </div>
-            <!-- <div class= "nav-dropdown">
-                <a class= "dropdown-button"></a>
-                <div class="dropdown-content">
-                    <a>Profile</a>
-                    <a>Settings</a>
-                    <a></a>
-                    <a></a>
-                </div>
-            </div> -->
+           
         </div>
         <br />
         <div class="headline">
             <p id='text'>
                 Calculate your journey costs, Smater!
             </p>
-            <p id= "patrol-price">
+            <p id= "petrol-price">
                 price of pretrol for March: R21/L
             </p>
         </div>
@@ -85,5 +89,13 @@
             <br>
             &copy; 2026 All rights reserved
         </div>
+        
+        <script>
+        document.querySelector('.hamburger-icon').addEventListener('click', function(){
+            this.closest('.nav-dropdown').classList.toggle('show');
+        });
+        
+        
+        </script>
     </body>
 </html>

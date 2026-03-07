@@ -1,4 +1,4 @@
-/* ======All Pages=======*/
+/* ===================================================All Pages=======*/
 * {
     align-content: center;
     margin: auto;
@@ -7,7 +7,7 @@
     background-color: rgb(218, 218, 218);
 }
 
-/* =======Body=========*/
+/* =======================================================Body=========*/
 body {
     text-align: center;
     background-color: antiquewhite;
@@ -25,11 +25,16 @@ body {
     background-color: inherit;
     border: ridge;
 }
+.title {
+    background-color: aliceblue;
+    
+}
 
-/*========Buttons========*/
+/*=====================================================Buttons========*/
 button {
     outline: auto;
     color: green;
+    cursor: pointer;
 }
 .container button {
     width: 30%;
@@ -37,25 +42,53 @@ button {
     color: black;
 }
 
-/* =========Links============ */
+.controls {
+    padding: 3px;
+    margin: 20px;
+    color: darkslateblue;
+    background-color: blanchedalmond;
+    border: solid;
+    border-radius: 5px;
+}
+
+/* ==================================================Links============ */
 a {
     color: #0000FF;
 }
 
-/*============Horizontal Line===*/
+/*==================================================Horizontal Line===*/
 hr {
     color: silver;
     background-color: black;
 }
 
-/*=========Headline========*/
+/*====================================================Headline========*/
 .headline {
-    width: 60%;
-    
+    width: 80%;
+    margin-bottom: 20px; 
+    background-color: inherit;
 }
-/* =======Navigation=========*/
+
+#text {
+    position: relative;
+    background-color: white;
+    padding: 4px;
+    width: 30%;
+    float: inline-start;
+    box-shadow: 0px 8px 16px 0px red; 
+}
+
+#petrol-price {
+    position: fixed;
+    padding:4px ;
+    right:20%;
+    width: 20%;
+    box-shadow: 0px 8px 16px 0px green;
+}
+
+/* ================================================Navigation=========*/
 .nav-btns{
-   display: flex;
+    display: flex;
     width: 100%;
     justify-content: space-between;
 
@@ -69,7 +102,7 @@ hr {
 }
 
 
-/*========Icons=======*/
+/*======================================================Icons=======*/
 .btn-icons{
     display:flexbox;
     width: auto;
@@ -77,9 +110,64 @@ hr {
 }
 
 
+/*=======================================Dropdown Navigation========*/
+.nav-dropdown{
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 1000;
+    background-color: transparent;
+}
 
+.hamburger-icon {
+    cursor: pointer;
+    padding: 8px;
+    background-color:antiquewhite;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 23px
+}
 
+.bar {
+    width: 100%;
+    height: 3px;
+    margin: 2px;
+    background-color: black;
+    border-radius: 2px
+}
 
+.dropdown-content {
+    display: none;
+    position:absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,3);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    top: calc(100% + 10px);
+    left: auto;
+    right: 0;
+    list-style: none;
+}
+
+ /* this uses java script to show and hide the content of 
+  * the navigation dropdown*/
+.nav-dropdown.show .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a{
+    color: black;
+    padding: 12px 16px;
+    background-color: rgba(249,249,249,0.8);
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
 
 
 
