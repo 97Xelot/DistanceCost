@@ -233,5 +233,39 @@ border-radius: 13px;
 
 /*-----------------Popup Window for Reminders---------------------*/
 
+.form input,
+    .form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #2c3e50;
+      background: white;
+      color: black;
+    }
+
+
+
+   .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row .form {
+      flex: 1;
+    }
+
+
+
+.submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #22c388;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
 

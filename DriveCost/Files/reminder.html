@@ -17,58 +17,41 @@
 
         <button onclick="showReminder()">+ Add Reminder</button>
 
-         <div id = "modeOfTransport" class="popupWindow">
+
+
+         <div id = "setReminder" class="popupWindow">
         <div class="popup-content">
              <button onclick="closeReminder()" class="back-btn">&#60; Back</button>
             <h3>New Reminder</h3>
 
-            <div class="form-group">
+            <div class="form">
         <label>Title</label>
-        <input type="text" placeholder="Reminder title" >
+        <input type="text" placeholder="Reminder title" id="title">
       </div>
 
-      <div class="form-group">
-        <label>Note</label>
-        <textarea placeholder="Additional notes..." ></textarea>
+      <div class="form">
+        <label>Notes</label>
+        <textarea placeholder="Additional notes..." id="note"></textarea>
       </div>
 
       <div class="row">
-        <div class="form-group">
+        <div class="form">
           <label>Origin</label>
-          <input type="text" placeholder="From" >
+          <input type="text" placeholder="From" id="origin">
         </div>
 
-        <div class="form-group">
+        <div class="form">
           <label>Destination</label>
-          <input type="text" placeholder="To" >
+          <input type="text" placeholder="To" id="destination">
         </div>
       </div>
 
        <button class="submit-btn" onclick="">Create Reminder</button>
            
-
-
-
-            
-
-        </div>
-
-        <div id="remindersContainer">
-
-            <div class="card" id="emptyState">
-                <h3>No Reminders Yet</h3>
-                <p>You don't have any reminders set.</p>
-            </div>
-
-
-
-
         </div>
 
 
-
-
-
+        </div>
 
 
     </div>
@@ -76,12 +59,12 @@
     <script>
          function showReminder(){
 
-            document.getElementById("modeOfTransport").classList.add("active");
+            document.getElementById("setReminder").classList.add("active");
 
         }
 
         function closeReminder() {
-                    document.getElementById("modeOfTransport").classList.remove("active");
+                    document.getElementById("setReminder").classList.remove("active");
         
         }       
         
