@@ -57,7 +57,7 @@
 
         <!--Popup window-->
 
-    <div id = "modeOfTransport" class="transportWindow">
+    <div id = "modeOfTransport" class="popupWindow">
         <div class="popup-content">
             <button onclick="closeTransport()" class="back-btn">&#60; Back</button>
             <h2>Mode Of Transport</h2>
@@ -67,17 +67,18 @@
             <button class="typeOfTransport">Bike <img src="/Images/bike.png" class="btn-icons"></button>
             <button class="typeOfTransport">Cycling <img src="/Images/cycle.png" class="btn-icons"></button>
             <button class="typeOfTransport"> Walking <img src="/Images/walk.png" class="btn-icons"></button>
+            
 
         </div>
 </div>
 
         <div>
             Map<i></i> 
-            <button>Navigate</button>
+            <button id="">Navigate</button>
         </div>
         <div>
             Add Reminder <i></i> 
-            <button>Press to Add&gt;&gt;</button>
+            <button onclick="reminderPage()">Press to Add&gt;&gt;</button>
         </div>
         <div>
             <button>Notes</button>
@@ -111,6 +112,10 @@
         document.querySelector('.hamburger-icon').addEventListener('click', function(){
             this.closest('.nav-dropdown').classList.toggle('show');
         });
+
+        function reminderPage() {
+        window.location.href = "reminder.html";
+        }
 
         //---------------popup Window---------------//
 

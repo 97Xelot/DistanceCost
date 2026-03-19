@@ -173,8 +173,8 @@ hr {
     text-align: left;
 }
 
-/*-----------------Popup Window---------------------*/
-.transportWindow{
+/*-----------------Popup Window for Transprt---------------------*/
+.popupWindow{
     display:flex;
     visibility:hidden;
     opacity:0;
@@ -189,7 +189,7 @@ hr {
     transition:0.3s;
 }
 
-.transportWindow.active{
+.popupWindow.active{
     visibility:visible;
     opacity:1;
 }
@@ -230,6 +230,8 @@ border-radius: 13px;
     
 }
 
+
+/*-----------------Popup Window for Reminders---------------------*/
 
 
 
