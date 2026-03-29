@@ -4,7 +4,6 @@
     margin: auto;
     padding: 3px; 
     flex: auto;
-    background-color: rgb(218, 218, 218);
 }
 
 /* =======================================================Body=========*/
@@ -50,6 +49,30 @@ button {
     border: solid;
     border-radius: 5px;
 }
+
+  .delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .add-btn{
+        display: flex;
+        position: absolute;
+        background: #22c388;
+        top: 45px;
+        right: 20px;
+        border: none;
+        outline: none;
+        padding: 15px 18px;
+        border-radius: 10%;
+        color: white;
+        cursor: pointer;
+    }
 
 /* ==================================================Links============ */
 a {
@@ -255,7 +278,6 @@ border-radius: 13px;
     }
 
 
-
 .submit-btn {
       width: 100%;
       padding: 12px;
@@ -268,4 +290,54 @@ border-radius: 13px;
       margin-top: 10px;
     }
 
+    /* -----------------------Reminder Page----------------------------- */
+
+    .header-reminder {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+
+    .text-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        margin: 0;
+        font-size: 32px;
+        font-weight: bold;
+        background: none;
+    }
+
+
+
+    .card{
+        position: relative;
+        margin: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.reminder-card {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 20px;
+    padding: 20px;
+    background: #b3adad;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 

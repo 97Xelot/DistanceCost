@@ -8,67 +8,141 @@
 </head>
 <body>
 
-    <div class = "">
+   <div class="header-reminder">
+    <div class="back-btn" onclick="history.back()" style="cursor: pointer;">← Back</div>
+</div>
 
-        <a href="index.html" class="back-btn">← <span>Back</span> </a>
-
-        <H2>Reminders</H2>
-        <p>Manage your trip notes and reminders</p>
-
-        <button onclick="showReminder()">+ Add Reminder</button>
-
-
-
-         <div id = "setReminder" class="popupWindow">
-        <div class="popup-content">
-             <button onclick="closeReminder()" class="back-btn">&#60; Back</button>
-            <h3>New Reminder</h3>
-
-            <div class="form">
-        <label>Title</label>
-        <input type="text" placeholder="Reminder title" id="title">
-      </div>
-
-      <div class="form">
-        <label>Notes</label>
-        <textarea placeholder="Additional notes..." id="note"></textarea>
-      </div>
-
-      <div class="row">
-        <div class="form">
-          <label>Origin</label>
-          <input type="text" placeholder="From" id="origin">
-        </div>
-
-        <div class="form">
-          <label>Destination</label>
-          <input type="text" placeholder="To" id="destination">
-        </div>
-      </div>
-
-       <button class="submit-btn" onclick="">Create Reminder</button>
-           
-        </div>
-
-
-        </div>
-
-
+<div class="top-section">
+    <div class="text-section">
+        <h1 class="title">Reminders</h1>
+        <p class="subtitle">Manage your trip notes and reminders</p>
     </div>
 
-    <script>
-         function showReminder(){
+    <button class="add-btn" onclick="showReminder()">+ Add Reminder</button>
+</div>
 
-            document.getElementById("setReminder").classList.add("active");
 
-        }
+<div id="emptyState" class="card">
+    <h3>No Reminders Yet</h3>
+    <p>Start by creating a new reminder.</p>
+</div>
 
-        function closeReminder() {
-                    document.getElementById("setReminder").classList.remove("active");
-        
-        }       
-        
-    </script>
+<div id="reminderList"></div>
+
+<button class="add-btn" onclick="showReminder()">+ Add Reminder</button>
+
+<!-- POPUP -->
+<div id="setReminder" class="popupWindow">
+    <div class="popup-content">
+
+        <button onclick="closeReminder()" class="back-btn">← Back</button>
+        <h3>New Reminder</h3>
+
+        <div class="form">
+            <label>Title</label>
+            <input type="text" id="title" placeholder="Name">
+        </div>
+
+        <div class="form">
+            <label>Notes</label>
+            <textarea id="note" placeholder="Add notes..."></textarea>
+        </div>
+
+        <div class="row">
+            <div class="form">
+                <label>Origin</label>
+                <input type="text" id="origin" placeholder="From">
+            </div>
+
+            <div class="form">
+                <label>Destination</label>
+                <input type="text" id="destination" placeholder="To">
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="createReminder()">Create Reminder</button>
+
+    </div>
+</div>
+
+<script>
+function showReminder() {
+    document.getElementById("setReminder").classList.add("active");
+}
+
+function closeReminder() {
+    document.getElementById("setReminder").classList.remove("active");
+}
+
+function createReminder() {
+    const title = document.getElementById("title").value;
+    const note = document.getElementById("note").value;
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+
+    if (!title || !origin || !destination) {
+        alert("Please fill in Title, Origin, and Destination");
+        return;
+    }
+
+    const reminder = {
+        title,
+        note,
+        origin,
+        destination
+    };
+
+    let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
+    reminders.push(reminder);
+    localStorage.setItem("reminders", JSON.stringify(reminders));
+
+    // clears input fields after creating a reminder //
+    document.getElementById("title").value = "";
+    document.getElementById("note").value = "";
+    document.getElementById("origin").value = "";
+    document.getElementById("destination").value = "";
+
+    closeReminder();
+    displayReminders();
+}
+// Deletes reminder from local storage and updates the display //
+function deleteReminder(index) {
+    let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
+    reminders.splice(index, 1);
+    localStorage.setItem("reminders", JSON.stringify(reminders));
+    displayReminders();
+}
+
+function displayReminders() {
+    const reminderList = document.getElementById("reminderList");
+    const emptyState = document.getElementById("emptyState");
+
+    let reminders = JSON.parse(localStorage.getItem("reminders")) || [];
+    reminderList.innerHTML = "";
+
+  // Show empty state  card if there are no reminders//
+    if (reminders.length === 0) {
+      emptyState.style.display = "block";
+      return;
+    }
+
+    emptyState.style.display = "none";
+
+    reminders.forEach((reminder, index) => {
+        const card = document.createElement("div");
+        card.className = "reminder-card";
+        card.innerHTML = `
+            <h4>${reminder.title}</h4>
+            <p><strong>From:</strong> ${reminder.origin} <br><strong>To:</strong> ${reminder.destination}</p>
+            ${reminder.note ? `<p>${reminder.note}</p>` : ""}
+            <button onclick="deleteReminder(${index})" class="delete-btn">Delete</button>
+        `;
+        reminderList.appendChild(card);
+    });
+}
+
+window.onload = displayReminders;
+</script>
 
     
 </body>
